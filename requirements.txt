@@ -3,3 +3,7 @@ pandas
 scikit-learn
 joblib
 flask
+fastapi
+uvicorn
+pydantic
+httpx
