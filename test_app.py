@@ -53,5 +53,11 @@ class TestPredictionApplication(unittest.TestCase):
         )
         self.assertEqual(response.status_code, 422)
 
+    def test_metrics_endpoint(self):
+        response = self.client.get("/metrics")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("student_api_model_loaded", response.text)
+        self.assertIn("student_api_http_requests_total", response.text)
+
 if __name__ == "__main__":
     unittest.main()
